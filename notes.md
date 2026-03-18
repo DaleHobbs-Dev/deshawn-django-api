@@ -55,3 +55,37 @@ ORMs can be a valuable tool for developers, providing a convenient and efficient
 ### What is Serialization?
 
 Serialization is the process of converting complex data types, such as class objects or data structures, into a format that can be easily transmitted across the World Wide Web (WWW) or stored. In the context of web development, serialization is often used to convert data from a database into a format that can be sent over the network, such as JSON (JavaScript Object Notation) or XML (eXtensible Markup Language). This allows the data to be easily consumed by client applications, such as web browsers or mobile apps.
+
+### What is a ViewSet?
+
+A ViewSet is a class-based view in Django that provides a way to define the behavior of a set of related views for a particular resource. It is part of the Django REST framework, which is a powerful and flexible toolkit for building Web APIs. A ViewSet allows you to define the logic for handling different HTTP methods (e.g., GET, POST, PUT, DELETE) for a specific resource in a single class, rather than having to create separate views for each method. This can help reduce code duplication and improve the organization of your views. For example, you can define a ViewSet for a "User" resource that handles all the CRUD (Create, Read, Update, Delete) operations for user objects in a single class.
+
+### What is a Serializer?
+
+A Serializer is a component in Django REST framework that is responsible for converting complex data types, such as Django model instances, into a format that can be easily rendered into JSON, XML, or other content types. It also provides deserialization, which allows you to convert incoming data back into complex data types. Serializers are used to define how data should be represented when it is sent over the network and how it should be validated when it is received. For example, you can create a Serializer for a "User" model that specifies which fields should be included in the serialized output and how to validate incoming data when creating or updating user objects. Serializers can also handle nested relationships between models, allowing you to represent related data in a structured way.
+
+## Migrations in Django
+
+### How to Create and Apply Migrations
+
+First we want to create a migration for our models. We can do this using the following command:
+
+```bash
+python manage.py makemigrations
+```
+
+If on a specific app, you can specify the app name:
+
+```bash
+python manage.py makemigrations your_app_name
+```
+
+This command will generate migration files based on the changes you have made to your models. These migration files contain the instructions for updating the database schema to match your models.
+
+Next, we need to apply the migrations to the database. We can do this using the following command:
+
+```bash
+python manage.py migrate
+```
+
+This command will apply all pending migrations to the database, ensuring that the database schema is up-to-date with your models.
