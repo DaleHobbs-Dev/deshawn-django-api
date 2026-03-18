@@ -1,5 +1,21 @@
 # Notes about Django and Related Concepts
 
+## Starting the Django Development Server
+
+To start the Django development server, you can use the following command in your terminal:
+
+```bash
+python manage.py runserver
+```
+
+This command will start the development server on the default port (8000). You can access your application by navigating to `http://localhost:8000/` in your web browser. If you want to specify a different port, you can do so by providing the port number as an argument:
+
+```bash
+python manage.py runserver 8080
+```
+
+This will start the server on port 8080, and you can access your application at `http://localhost:8080/`. The development server is intended for use during development and should not be used in a production environment, as it is not designed to handle high traffic or provide the security features needed for a production deployment. For production environments, you should use a more robust web server, such as Gunicorn or uWSGI, in combination with a reverse proxy server like Nginx or Apache.
+
 ## ORM Notes Section
 
 ### What is an ORM?
