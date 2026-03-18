@@ -1,3 +1,4 @@
+"""View module for handling requests about cities"""
 
 from django.http import HttpResponseServerError
 from rest_framework.viewsets import ViewSet
@@ -9,6 +10,7 @@ from deshawnapi.models import City
 class CityView(ViewSet):
 
     def retrieve(self, request, pk=None):
+        """Handle GET requests for single city"""
         # Step 1: Get a single city based on the primary key in the request URL
         city = City.objects.get(pk=pk)
 
@@ -19,6 +21,7 @@ class CityView(ViewSet):
         return Response(serialized.data, status=status.HTTP_200_OK)
 
     def list(self, request):
+        """Handle GET requests to get all cities"""
         # Step 1: Get all city data from the database
         cities = City.objects.all()
 
@@ -33,5 +36,7 @@ class CitySerializer(serializers.ModelSerializer):
 
     class Meta:
         model = City
-        fields = ('id', 'name',)
-
+        fields = (
+            "id",
+            "name",
+        )
